@@ -82,8 +82,8 @@ The file will be named soap_xml.
 
 = Docs for Developers
 
-Install the jeweler gem
-		gem install jeweler		 
+ $ gem install jeweler	 
+to install the jeweler gem
 
  $ rake rdoc
 to regenerate the project documentation if needed
