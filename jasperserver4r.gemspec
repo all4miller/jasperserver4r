@@ -22,9 +22,20 @@ Currently the following JasperServer Web Services are supported:
   s.files = [
     ".document",
      ".gitignore",
+     ".loadpath",
+     "CHANGELOG.rdoc",
+     "MIT-LICENSE",
      "README.rdoc",
      "Rakefile",
-     "lib/jasperserver4r.rb"
+     "VERSION.yml",
+     "jasperserver4r.gemspec",
+     "lib/jasperserver4r.rb",
+     "lib/jasperserver4r/jasperserverlogger.rb",
+     "lib/jasperserver4r/reportschedulerservice.rb",
+     "lib/jasperserver4r/reportschedulerservicedriver.rb",
+     "lib/jasperserver4r/reportschedulerservicemappingregistry.rb",
+     "test/common_utils.rb",
+     "test/test_report_scheduler.rb"
   ]
   s.homepage = %q{http://github.com/all4miller/jasperserver4r}
   s.rdoc_options = ["--charset=UTF-8"]
