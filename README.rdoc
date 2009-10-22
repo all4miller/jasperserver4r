@@ -1,18 +1,100 @@
-= jasperserver4r
+= jaserserver4r Library
 
-Description goes here.
+Welcome to jasperserver4r: A ruby library for using JasperServer web services API!
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+Documentation and comments are a work in progress.
 
-== Copyright
 
-Copyright (c) 2009 all4miller. See LICENSE for details.
+= Useful Web Resources
+
+- {JasperServer CE home}[http://jasperforge.org/projects/jasperserver]
+- {JasperServer API discussion forum}[http://groups.google.com/group/jasperserver4r]
+- {JasperServer API documentation}[http://rdoc.info/projects/all4miller/jasperserver4r]
+- {This project's github page}[http://github.com/all4miller/jasperserver4r]
+
+
+= Docs for Users
+
+== 1 - Installation:
+
+jasperserver4r is a ruby gem. See http://docs.rubygems.org/read/book/1
+
+Install it using the gem install command from  
+   $ gem install jasperserver4r
+
+The following gem libraries are required:
+- soap4r v1.5.8
+- httpclient v2.1.2 or greater
+
+
+== 2 - Using the client library:
+
+It's pretty easy to use.
+See http://docs.rubygems.org/read/chapter/3#page70 for how to set the rubygem
+environment.
+   $ export RUBYOPT=rubygems
+or
+   $ ruby -rubygems my_program_that_uses_gems
+
+If you do not use the rubygems option, you need to add
+   require 'rubygems'
+at the beginning of your programs.
+
+Then:
+   require 'jasperserver4r'
+
+   client = JasperServer::API.new( username, password)
+creates a driver for the JasperServer web services API with login as username 
+with password being a valid JasperServer portal account login.
+
+Then, just specify which service you're looking to use (currently only scheduling):
+   schedule_service = client.get_report_scheduler_service( endpoint url )
+
+and you should now be able to just use the API methods in the object you were
+returned:
+   scheduled_jobs = schedule_service.getAllJobs
+
+=== 2.1 - Logging:
+
+It is often useful to see a trace of the raw SOAP XML being sent and received.
+The quickest way of achieving this when debugging your application is by setting
+the JASPERSERVER4R_DEBUG environment variable to TRUE; e.g. in the bash shell:
+   $ export JASPERSERVER4R_DEBUG=TRUE
+or from your Ruby code:
+   ENV['JASPERSERVER4R_DEBUG'] = 'TRUE'
+
+This will output the SOAP XML to stderr, which will usually show up in your
+terminal window.
+
+There's also the option of logging requests and XML to files. In order to enable
+this, you should use the write_to_file method of the loggers inside your JasperServer::API object:
+
+   client = JasperServer::API.new
+   client.xml_logger.log_to_file
+
+This logs the full SOAP XML being sent and received over the wire. These will be written
+to the current directory by default, but you can specify a path as an optional
+parameter to log_to_file:
+   client.xml_logger.log_to_file('/var/log/my_app')
+
+The file will be named soap_xml.
+
+
+= Docs for Developers
+
+ $ rake generate
+to regenerate the bindings if needed
+
+ $ rake rdoc
+to regenerate the project documentation if needed
+
+ $ rake package
+to package the gem and create a release
+
+ $ rake test
+to run unit tests on the library
+
+
+= Copyright/License Info
+
+Copyright (c) 2009 all4miller. See MIT-LICENSE for details.

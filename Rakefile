@@ -4,14 +4,30 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
+    # Basic information
     gem.name = "jasperserver4r"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Client library for the JasperServer Web Services API."
+    gem.description = <<-EOS
+JasperServer4r provides an easy way to access the JasperServer Web Services API in Ruby.
+Currently the following JasperServer Web Services are supported:
+  * Report Scheduling
+    EOS
+
+    # Files and dependencies
+    gem.add_dependency('soap4r', '= 1.5.8')
+    gem.add_dependency('httpclient', '>= 2.1.2')
+    
+    # Metadata
     gem.email = "all4miller@gmail.com"
     gem.homepage = "http://github.com/all4miller/jasperserver4r"
     gem.authors = ["all4miller"]
+    gem.rubyforge_project = 'jasperserver4r'
+    gem.requirements << 'soap4r v1.5.8'
+    gem.requirements << 'httpclient v2.1.2 or greater'    
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
+  Jeweler::GemcutterTasks.new
+  Jeweler::RubyforgeTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
@@ -36,10 +52,6 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
-
-task :default => :test
-
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
@@ -49,3 +61,7 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+task :test => :check_dependencies
+
+task :default => :test
