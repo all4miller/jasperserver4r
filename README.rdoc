@@ -1,6 +1,6 @@
 = jaserserver4r Library
 
-Welcome to jasperserver4r: A ruby library for using JasperServer web services API!
+Welcome to jasperserver4r: A ruby library for utilising the JasperServer web services API.
 
 Documentation and comments are a work in progress.
 
@@ -82,17 +82,20 @@ The file will be named soap_xml.
 
 = Docs for Developers
 
- $ rake generate
-to regenerate the bindings if needed
+Install the jeweler gem
+		gem install jeweler		 
 
  $ rake rdoc
 to regenerate the project documentation if needed
 
- $ rake package
+ $ rake build
 to package the gem and create a release
 
  $ rake test
 to run unit tests on the library
+
+ $ rake -T
+for a list of available tasks
 
 
 = Copyright/License Info

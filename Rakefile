@@ -13,17 +13,11 @@ Currently the following JasperServer Web Services are supported:
   * Report Scheduling
     EOS
 
-    # Files and dependencies
-    gem.add_dependency('soap4r', '= 1.5.8')
-    gem.add_dependency('httpclient', '>= 2.1.2')
-    
     # Metadata
     gem.email = "all4miller@gmail.com"
     gem.homepage = "http://github.com/all4miller/jasperserver4r"
     gem.authors = ["all4miller"]
     gem.rubyforge_project = 'jasperserver4r'
-    gem.requirements << 'soap4r v1.5.8'
-    gem.requirements << 'httpclient v2.1.2 or greater'    
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
