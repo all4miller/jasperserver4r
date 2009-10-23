@@ -1,4 +1,4 @@
-require 'xsd/qname'
+﻿require 'xsd/qname'
 
 module JasperServer
   module ReportSchedulerService 
