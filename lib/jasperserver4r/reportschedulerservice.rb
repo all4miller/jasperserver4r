@@ -1,16 +1,14 @@
-﻿require 'xsd/qname'
+require 'xsd/qname'
 
 module JasperServer
-  module ReportSchedulerService 
-    
-    
-    # {http://www.jasperforge.org/jasperserver/ws}JobTrigger
-    # abstract
-    #   id - SOAP::SOAPLong
-    #   version - SOAP::SOAPInt
-    #   timezone - SOAP::SOAPString
-    #   startDate - SOAP::SOAPDateTime
-    #   endDate - SOAP::SOAPDateTime
+  module ReportSchedulerService     
+      
+    # JobTrigger
+    # - id - SOAP::SOAPLong
+    # - version - SOAP::SOAPInt
+    # - timezone - SOAP::SOAPString
+    # - startDate - SOAP::SOAPDateTime
+    # - endDate - SOAP::SOAPDateTime
     class JobTrigger
       attr_accessor :id
       attr_accessor :version
@@ -296,7 +294,13 @@ module JasperServer
       NORMAL = RuntimeJobState.new("NORMAL")
       PAUSED = RuntimeJobState.new("PAUSED")
       UNKNOWN = RuntimeJobState.new("UNKNOWN")
+    end      
+
+    # getAllJobs
+    class GetAllJobs #:nodoc: all
+      def initialize
+      end
     end
-    
+  
   end
 end

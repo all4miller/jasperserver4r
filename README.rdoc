@@ -1,60 +1,50 @@
-= jaserserver4r Library
+= JasperServer4r Library
 
-Welcome to jasperserver4r: A ruby library for utilising the JasperServer web services API.
-
-Documentation and comments are a work in progress.
-
+jasperserver4r is a ruby library for utilising the JasperServer web services
+API. jasperserver4r allows you to use all the methods defined by the report 
+scheduling service. This library was developed and tested against JasperServer v3.5.0 so it
+may not work with earlier versions. Support for the repository service is under
+development. Documentation and comments are a work in progress.
 
 = Useful Web Resources
 
-- {JasperServer CE home}[http://jasperforge.org/projects/jasperserver]
 - {JasperServer API discussion forum}[http://groups.google.com/group/jasperserver4r]
 - {JasperServer API documentation}[http://jasperserver4r.rubyforge.org/rdoc/]
 - {This project's github page}[http://github.com/all4miller/jasperserver4r]
+- {JasperServer CE home}[http://jasperforge.org/projects/jasperserver]
+- {JasperServer web services guide v3.5.0}[http://jasperserver.sourceforge.net/docs/3-5-0/JasperServer-Web-Services-Guide.pdf]
 
+= Installation
 
-= Docs for Users
-
-== 1 - Installation:
-
-jasperserver4r is a ruby gem. See http://docs.rubygems.org/read/book/1
-
-Install it using the gem install command from  
+Install from rubyforge:  
    $ gem install jasperserver4r
 
 The following gem libraries are required:
 - soap4r v1.5.8
 - httpclient v2.1.2 or greater
 
+= Using the client library
 
-== 2 - Using the client library:
+=== Basic example
 
 It's pretty easy to use.
 See http://docs.rubygems.org/read/chapter/3#page70 for how to set the rubygem
-environment.
-   $ export RUBYOPT=rubygems
-or
-   $ ruby -rubygems my_program_that_uses_gems
-
-If you do not use the rubygems option, you need to add
-   require 'rubygems'
-at the beginning of your programs.
-
-Then:
+environment. Then:
    require 'jasperserver4r'
-
-   client = JasperServer::API.new( username, password)
-creates a driver for the JasperServer web services API with login as username 
-with password being a valid JasperServer portal account login.
-
-Then, just specify which service you're looking to use (currently only scheduling):
+   client = JasperServer::API.new( username, password )
    schedule_service = client.get_report_scheduler_service( endpoint url )
-
-and you should now be able to just use the API methods in the object you were
-returned:
    scheduled_jobs = schedule_service.getAllJobs
+creates a driver for the JasperServer web services API and retrieves a list of
+all schedules jobs currently defined in the JasperServer repository. Username 
+and password are valid JasperServer portal credentials. The  
+get_report_scheduler_service endpoint url defaults to
+http://localhost:8080/jasperserver/services/ReportScheduler    
 
-=== 2.1 - Logging:
+Will be adding more examples asap. Check out the tests for sample usage of each
+available operation. The web services guide mentioned above is a good resource
+for detailed descriptions of available operations.  
+
+=== Logging
 
 It is often useful to see a trace of the raw SOAP XML being sent and received.
 The quickest way of achieving this when debugging your application is by setting
@@ -82,10 +72,7 @@ The file will be named soap_xml.
 
 = Docs for Developers
 
- $ gem install jeweler	 
-to install the jeweler gem
-
- $ rake rdoc
+ $ rake rerdoc
 to regenerate the project documentation if needed
 
  $ rake build

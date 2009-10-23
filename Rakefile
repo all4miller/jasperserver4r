@@ -48,12 +48,19 @@ end
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
+  # Try to use darkfish-rdoc to generate the docs
+  begin
+     require 'hanna/rdoctask'
+  rescue LoadError
+    # Do nothing, give up and continue with whatever is the default.
+  end
+  
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "jasperserver4r #{version}"
   rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_files.include('lib/jasperserver4r/*Service.rb')
+  rdoc.rdoc_files.include("lib/jasperserver4r/*Wrapper.rb")
 end
 
 task :test => :check_dependencies
