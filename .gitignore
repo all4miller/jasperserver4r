@@ -16,7 +16,6 @@ tmtags
 ## Aptana
 *.project
 *.loadpath
-*.document
 
 ## PROJECT::GENERAL
 coverage
