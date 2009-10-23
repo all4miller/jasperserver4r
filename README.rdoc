@@ -9,7 +9,7 @@ Documentation and comments are a work in progress.
 
 - {JasperServer CE home}[http://jasperforge.org/projects/jasperserver]
 - {JasperServer API discussion forum}[http://groups.google.com/group/jasperserver4r]
-- {JasperServer API documentation}[http://rdoc.info/projects/all4miller/jasperserver4r]
+- {JasperServer API documentation}[http://jasperserver4r.rubyforge.org/rdoc/]
 - {This project's github page}[http://github.com/all4miller/jasperserver4r]
 
 

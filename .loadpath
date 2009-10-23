@@ -3,4 +3,6 @@
 	<pathentry path="" type="src"/>
 	<pathentry path="org.rubypeople.rdt.launching.RUBY_CONTAINER" type="con"/>
 	<pathentry path="GEM_LIB/soap4r-1.5.8/lib" type="var"/>
+	<pathentry path="GEM_LIB/activesupport-2.3.4/lib" type="var"/>
+	<pathentry path="GEM_LIB/newjs-1.7.4/lib" type="var"/>
 </loadpath>
