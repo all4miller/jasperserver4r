@@ -10,7 +10,7 @@ class TestReportScheduler < Test::Unit::TestCase
     @client = CommonUtils.create_api_object(self)
     
     # Defaults to http://localhost:8080/jasperserver/services/ReportScheduler"
-    @scheduler_service = @client.get_report_scheduler_service( "http://debbie:8081/jasperserver/services/ReportScheduler" )
+    @scheduler_service = @client.get_report_scheduler_service
     
     @test_report_no_params = {'uri' => '/reports/samples/AllAccounts',  
                      'output_label' => 'AllAccounts', 
