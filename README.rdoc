@@ -9,7 +9,7 @@ development. Documentation and comments are a work in progress.
 = Useful Web Resources
 
 - {JasperServer API discussion forum}[http://groups.google.com/group/jasperserver4r]
-- {JasperServer API documentation}[http://jasperserver4r.rubyforge.org/rdoc/]
+- {JasperServer API documentation}[http://jasperserver4r.rubyforge.org/jasperserver4r]
 - {This project's github page}[http://github.com/all4miller/jasperserver4r]
 - {JasperServer CE home}[http://jasperforge.org/projects/jasperserver]
 - {JasperServer web services guide v3.5.0}[http://jasperserver.sourceforge.net/docs/3-5-0/JasperServer-Web-Services-Guide.pdf]
