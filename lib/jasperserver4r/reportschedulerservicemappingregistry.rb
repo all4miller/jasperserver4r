@@ -1,4 +1,4 @@
-﻿require 'jasperserver4r/reportschedulerservice'
+require 'jasperserver4r/reportschedulerservice'
 require 'soap/mapping'
 
 module JasperServer

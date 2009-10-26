@@ -1,4 +1,4 @@
-﻿require 'rubygems'
+require 'rubygems'
 gem 'soap4r', '=1.5.8'
 require 'jasperserver4r/reportschedulerservicedriver'
 require 'jasperserver4r/jasperserverlogger'

@@ -10,13 +10,13 @@ class TestReportScheduler < Test::Unit::TestCase
     @client = CommonUtils.create_api_object(self)
     
     # Defaults to http://localhost:8080/jasperserver/services/ReportScheduler"
-    @scheduler_service = @client.get_report_scheduler_service
+    @scheduler_service = @client.get_report_scheduler_service( "http://debbie:8081/jasperserver/services/ReportScheduler" )
     
-    @test_report_no_params =  {'uri' => '/reports/samples/AllAccounts',  
+    @test_report_no_params = {'uri' => '/reports/samples/AllAccounts',  
                      'output_label' => 'AllAccounts', 
                      'output_filename' => 'AllAccounts'}
                      
-    @test_report_with_params =  {'uri' => '/reports/samples/EmployeeAccounts',  
+    @test_report_with_params = {'uri' => '/reports/samples/EmployeeAccounts',  
                      'output_label' => 'EmployeeAccounts', 
                      'output_filename' => 'EmployeeAccounts',
                      'params' => {
@@ -41,7 +41,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -72,7 +72,7 @@ class TestReportScheduler < Test::Unit::TestCase
   # Test creating a scheduled job with a calendar trigger 
   def test_schedule_job_calendar_trigger
     # Create a trigger object with calendar recurrence
-    trigger = JasperServer::ReportSchedulerService::JobCalendarTrigger.new();
+    trigger = JasperServer::ReportSchedulerService::JobCalendarTrigger.new
     trigger.startDate = SOAP::SOAPDateTime.new("2010-01-01T08:00:00.0000000+02:00")
     trigger.minutes = "0"
     trigger.hours = "8"
@@ -80,7 +80,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.months = [0,1,2,3,4,5,6,7,8,9,10,11]
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -118,7 +118,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -162,7 +162,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -206,7 +206,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -250,7 +250,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -296,7 +296,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -347,7 +347,7 @@ class TestReportScheduler < Test::Unit::TestCase
     trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
     
     # Create an mail notification object
-    email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+    email = JasperServer::ReportSchedulerService::JobMailNotification.new
     email.toAddresses = "all4miller@gmail.com"
     email.subject = "Schedule report execution completed successfully"
     email.messageText = "Schedule report execution completed successfully"
@@ -390,7 +390,7 @@ class TestReportScheduler < Test::Unit::TestCase
       trigger.recurrenceIntervalUnit = JasperServer::ReportSchedulerService::IntervalUnit::WEEK
       
       # Create an mail notification object
-      email = JasperServer::ReportSchedulerService::JobMailNotification.new()
+      email = JasperServer::ReportSchedulerService::JobMailNotification.new
       email.toAddresses = "all4miller@gmail.com"
       email.subject = "Schedule report execution completed successfully"
       email.messageText = "Schedule report execution completed successfully"
