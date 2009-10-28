@@ -58,11 +58,11 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "jasperserver4r #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include("lib/jasperserver4r.rb")
-  rdoc.rdoc_files.include('lib/jasperserver4r/*Service.rb')
+  rdoc.rdoc_files.include('README*')  
+  rdoc.rdoc_files.include('lib/jasperserver4r.rb')
+  rdoc.rdoc_files.include('lib/jasperserver4r/jasperserverlogger.rb')
+  rdoc.rdoc_files.include('lib/jasperserver4r/*service.rb')  
 end
 
 task :test => :check_dependencies
-
 task :default => :test
