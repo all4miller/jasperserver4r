@@ -48,7 +48,7 @@ end
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
-  # Try to use darkfish-rdoc to generate the docs
+  # Try to use hanna to generate the docs
   begin
      require 'hanna/rdoctask'
   rescue LoadError
@@ -59,7 +59,7 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "jasperserver4r #{version}"
   rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include("lib/jasperserver4r")
+  rdoc.rdoc_files.include("lib/jasperserver4r.rb")
   rdoc.rdoc_files.include('lib/jasperserver4r/*Service.rb')
 end
 

@@ -8,11 +8,11 @@ development. Documentation and comments are a work in progress.
 
 = Useful Web Resources
 
-- {JasperServer API discussion forum}[http://groups.google.com/group/jasperserver4r]
-- {JasperServer API documentation}[http://jasperserver4r.rubyforge.org/jasperserver4r]
-- {This project's github page}[http://github.com/all4miller/jasperserver4r]
-- {JasperServer CE home}[http://jasperforge.org/projects/jasperserver]
-- {JasperServer web services guide v3.5.0}[http://jasperserver.sourceforge.net/docs/3-5-0/JasperServer-Web-Services-Guide.pdf]
+- JasperServer API discussion forum[http://groups.google.com/group/jasperserver4r]
+- JasperServer API documentation[http://jasperserver4r.rubyforge.org/jasperserver4r]
+- This project's github page[http://github.com/all4miller/jasperserver4r]
+- JasperServer CE home[http://jasperforge.org/projects/jasperserver]
+- JasperServer CE web services guide v3.5.0[http://jasperserver.sourceforge.net/docs/3-5-0/JasperServer-Web-Services-Guide.pdf]
 
 = Installation
 
@@ -25,7 +25,7 @@ The following gem libraries are required:
 
 = Using the client library
 
-=== Basic example
+== Basic example
 
 It's pretty easy to use.
 See http://docs.rubygems.org/read/chapter/3#page70 for how to set the rubygem
@@ -44,7 +44,7 @@ Will be adding more examples asap. Check out the tests for sample usage of each
 available operation. The web services guide mentioned above is a good resource
 for detailed descriptions of available operations.  
 
-=== Logging
+== Logging
 
 It is often useful to see a trace of the raw SOAP XML being sent and received.
 The quickest way of achieving this when debugging your application is by setting
